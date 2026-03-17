@@ -1,0 +1,149 @@
+/*
+  Design system — Day SPA Aleksandra Mazur
+  Movement: Warm Minimal Luxury (Japandi x European boutique spa)
+  Principles: soft light, tactile materials, quiet contrast, refined details (brass + stone)
+  Palette intent: ciepły krem + piasek + delikatne drewno, akcent terakota; wysoki komfort czytania
+*/
+
+@import "tailwindcss";
+@import "tw-animate-css";
+
+@custom-variant dark (&:is(.dark *));
+
+@theme inline {
+  --radius-sm: calc(var(--radius) - 4px);
+  --radius-md: calc(var(--radius) - 2px);
+  --radius-lg: var(--radius);
+  --radius-xl: calc(var(--radius) + 4px);
+  --color-background: var(--background);
+  --color-foreground: var(--foreground);
+  --color-card: var(--card);
+  --color-card-foreground: var(--card-foreground);
+  --color-popover: var(--popover);
+  --color-popover-foreground: var(--popover-foreground);
+  --color-primary: var(--primary);
+  --color-primary-foreground: var(--primary-foreground);
+  --color-secondary: var(--secondary);
+  --color-secondary-foreground: var(--secondary-foreground);
+  --color-muted: var(--muted);
+  --color-muted-foreground: var(--muted-foreground);
+  --color-accent: var(--accent);
+  --color-accent-foreground: var(--accent-foreground);
+  --color-destructive: var(--destructive);
+  --color-border: var(--border);
+  --color-input: var(--input);
+  --color-ring: var(--ring);
+  --color-chart-1: var(--chart-1);
+  --color-chart-2: var(--chart-2);
+  --color-chart-3: var(--chart-3);
+  --color-chart-4: var(--chart-4);
+  --color-chart-5: var(--chart-5);
+  --color-sidebar: var(--sidebar);
+  --color-sidebar-foreground: var(--sidebar-foreground);
+  --color-sidebar-primary: var(--sidebar-primary);
+  --color-sidebar-primary-foreground: var(--sidebar-primary-foreground);
+  --color-sidebar-accent: var(--sidebar-accent);
+  --color-sidebar-accent-foreground: var(--sidebar-accent-foreground);
+  --color-sidebar-border: var(--sidebar-border);
+  --color-sidebar-ring: var(--sidebar-ring);
+}
+
+:root {
+  --radius: 0.75rem;
+
+  /* Warm background and readable ink */
+  --background: oklch(0.986 0.010 85);
+  --foreground: oklch(0.185 0.015 70);
+
+  /* Surfaces */
+  --card: oklch(0.992 0.008 85);
+  --card-foreground: var(--foreground);
+  --popover: oklch(0.992 0.008 85);
+  --popover-foreground: var(--foreground);
+
+  /* Brand accent — terracotta / copper */
+  --primary: oklch(0.515 0.105 45);
+  --primary-foreground: oklch(0.985 0.010 85);
+
+  /* Soft sand */
+  --secondary: oklch(0.955 0.020 85);
+  --secondary-foreground: var(--foreground);
+
+  --muted: oklch(0.965 0.014 85);
+  --muted-foreground: oklch(0.455 0.020 70);
+
+  --accent: oklch(0.945 0.030 80);
+  --accent-foreground: var(--foreground);
+
+  --destructive: oklch(0.577 0.245 27.325);
+  --border: oklch(0.900 0.015 85);
+  --input: oklch(0.900 0.015 85);
+  --ring: oklch(0.710 0.035 60);
+
+  --chart-1: oklch(0.515 0.105 45);
+  --chart-2: oklch(0.615 0.080 60);
+  --chart-3: oklch(0.445 0.045 85);
+  --chart-4: oklch(0.760 0.060 80);
+  --chart-5: oklch(0.330 0.030 60);
+
+  --sidebar: oklch(0.986 0.010 85);
+  --sidebar-foreground: var(--foreground);
+  --sidebar-primary: var(--primary);
+  --sidebar-primary-foreground: var(--primary-foreground);
+  --sidebar-accent: var(--accent);
+  --sidebar-accent-foreground: var(--accent-foreground);
+  --sidebar-border: var(--border);
+  --sidebar-ring: var(--ring);
+}
+
+@layer base {
+  * {
+    @apply border-border outline-ring/50;
+  }
+
+  html {
+    scroll-behavior: smooth;
+  }
+
+  body {
+    @apply bg-background text-foreground;
+    font-family: "Manrope", ui-sans-serif, system-ui;
+    text-rendering: geometricPrecision;
+  }
+
+  /* Background atmosphere: subtle grain */
+  body::before {
+    content: "";
+    position: fixed;
+    inset: 0;
+    pointer-events: none;
+    z-index: -1;
+    opacity: 0.18;
+    background-image: url("./assets/grain-texture.png");
+    background-size: 900px 900px;
+    mix-blend-mode: multiply;
+  }
+
+  h1, h2, h3, .font-display {
+    font-family: "Cormorant Garamond", ui-serif, Georgia;
+    letter-spacing: -0.01em;
+  }
+}
+
+@layer utilities {
+  .shadow-soft {
+    box-shadow:
+      0 1px 0 oklch(0 0 0 / 0.04),
+      0 18px 40px oklch(0 0 0 / 0.08);
+  }
+
+  .shadow-glow {
+    box-shadow:
+      0 0 0 1px oklch(0 0 0 / 0.06),
+      0 24px 64px oklch(0 0 0 / 0.10);
+  }
+
+  .text-balance {
+    text-wrap: balance;
+  }
+}
