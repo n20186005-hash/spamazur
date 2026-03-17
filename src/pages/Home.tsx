@@ -756,7 +756,7 @@ export default function Home({ targetSection }: HomeProps) {
             </div>
             <div className="md:text-right">
               <p className="text-sm text-muted-foreground">© {new Date().getFullYear()} {BRAND.name}. Wszystkie prawa zastrzeżone.</p>
-              <p className="mt-2 text-sm text-muted-foreground">本站技术支持请联系：claritleonelmnicol@gmail.com</p>
+              <p className="mt-2 text-sm text-muted-foreground">Wsparcie techniczne: claritleonelmnicol@gmail.com</p>
             </div>
           </div>
         </div>
