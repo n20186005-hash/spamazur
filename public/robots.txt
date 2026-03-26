@@ -1,0 +1,12 @@
+User-agent: *
+Allow: /
+
+# Sitemap location
+Sitemap: https://your-travel-site.com/sitemap.xml
+
+# Allow all search engines to crawl all pages
+Disallow:
+
+# If you have any private areas, you can disallow them here
+# Disallow: /admin/
+# Disallow: /private/
